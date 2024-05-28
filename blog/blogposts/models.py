@@ -8,11 +8,11 @@ class Post(models.Model):
 
     title = models.CharField(max_length=25, null=False, blank= False)
 
-    topic = models.CharField(max_length=25, null=False, blank=False)
+    #topic = models.CharField(max_length=25, null=False, blank=False)
 
     content = models.TextField()
 
-    image = models.ImageField(default="fallback.png", upload_to="post-images", blank=True)
+    image = models.ImageField(default="fallback.jpeg", upload_to="post-images", blank=True)
 
     created_at = models.DateTimeField(auto_now=True)
 
