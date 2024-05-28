@@ -1,0 +1,49 @@
+{% extends 'blogposts/base.html' %}
+
+{% block content %}
+
+    <body class="container mt-5 px-5">
+
+        
+        <div class="card px-5 col-md-6">
+            &nbsp; &nbsp; &nbsp;
+
+            {% if form_is_valid %}
+
+                <h2>Welcome new subscriber</h2>
+
+                <button type="submit" class="btn btn-sm btn-outline-secondary ">
+                    <a href="{% url 'index' %}" style="text-decoration: none; color: black"> Return to homepage </a>
+                </button>
+
+            {% else %}
+
+                <h2>Subscribe to our blog today</h2>
+                <p>Subscribing will allow you access to weekly and monthly newletters. Enjoy!</p>
+
+
+                <form action="" method="POST">
+
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+                    <!--this will show form as itself-->
+
+                    <input type="submit" value="Subscribe" class="btn btn-sm btn-outline-secondary">
+
+                </form>
+
+            {% endif %}
+            &nbsp; &nbsp; &nbsp;
+        </div>
+
+
+        
+
+
+
+
+    </body>
+
+
+{% endblock %}
